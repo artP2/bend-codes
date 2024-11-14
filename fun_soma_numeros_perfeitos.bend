@@ -5,17 +5,9 @@ soma_divisores from to num =
       (soma_divisores from (/ (+ from to) 2) num)
       (soma_divisores (+ 1 (/ (+ from to) 2)) to num))
   } else {
-    #{
-    # pq nao funciona?
-    match (% num from) {
+    switch (% num from) {
       0: from
       _: 0
-    }
-    #}
-    if (== 0 (% num from)){
-      from
-    } else {
-      0
     }
   }
 
