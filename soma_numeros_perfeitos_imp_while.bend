@@ -1,10 +1,9 @@
-# meio emulando um while
-# TODO tentar do jeito mais "paralelo"
-def soma_divisores(from, to, num):
-  bend i = from:
-    when i < to:
+# meio que emulando um while
+def soma_divisores(num):
+  bend i = 1:
+    when i < num -1 :
       if num % i == 0:
-        soma = i + fork(i + 1) 
+        soma = i + fork(i + 1) # fork meio q chama o bend recursivamente
       else:
         soma = 0 + fork(i + 1) 
     else:
@@ -12,9 +11,10 @@ def soma_divisores(from, to, num):
 
   return soma
 
+
 def eh_perfeito(num):
   if num > 1:
-    if soma_divisores(1, num -1, num) == num:
+    if soma_divisores(num) == num:
       return num
     # todo if precisa de um else
     else:
@@ -22,8 +22,8 @@ def eh_perfeito(num):
   else:
     return 0
 
-# meio emulando um while
-# TODO tentar do jeito mais "paralelo"
+
+# meio que emulando um while
 def soma_perfeitos(n):
   bend i = 0:
     when i < n:
@@ -32,6 +32,7 @@ def soma_perfeitos(n):
       soma = 0
 
   return soma
+
 
 def main:
   return soma_perfeitos(500)
