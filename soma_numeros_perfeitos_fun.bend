@@ -1,4 +1,4 @@
-# soma em tree-like pra aumentar a paralizacao
+# soma em tree-like pra aumentar a paralelizacao
 soma_divisores from to num =
   if (< from to) {
     (+ 
